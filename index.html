@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>Divide by 30</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>输入一个数字并除以30</h1>
+  <input type="text" id="numberInput" pattern="[0-9]*" oninput="this.value=this.value.replace(/[^\d]/g, '')" />
+  <button id="divideButton">计算结果</button>
+
+  <script>
+    function divideBy30() {
+      const input = document.getElementById("numberInput");
+      const value = parseFloat(input.value);
+      if (!isNaN(value)) {
+        const result = value / 30;
+        alert("结果：" + result);
+      }
+    }
+
+    const button = document.getElementById("divideButton");
+    button.addEventListener("click",divideBy30);
+  </script>
+</body>
+
+</html>

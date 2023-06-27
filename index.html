@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-  <title>Divide by 30</title>
+  <title>EDTA用量计算</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -25,24 +25,24 @@
 </head>
 
 <body>
-  <h1>输入一个数字并除以30的数</h1>
+  <h1>EDTA用量（mL）</h1>
   <input type="text" id="numberInput" pattern="[0-9]*" oninput="this.value=this.value.replace(/[^\d]/g, '')" />
-  <button id="divideButton">计算结果</button>
+  <button id="divideButton" style="margin-top: 20px;">计算结果</button>
 
   <script>
-    window.alert = function(name){     
-      var iframe = document.createElement("IFRAME");     
-      iframe.style.display="none";     
-      iframe.setAttribute("src", 'data:text/plain,');     
-      document.documentElement.appendChild(iframe);     
-      window.frames[0].window.alert(name);     
-      iframe.parentNode.removeChild(iframe); 
+    window.alert = function (name) {
+      var iframe = document.createElement("IFRAME");
+      iframe.style.display = "none";
+      iframe.setAttribute("src",'data:text/plain,');
+      document.documentElement.appendChild(iframe);
+      window.frames[0].window.alert(name);
+      iframe.parentNode.removeChild(iframe);
     };
     function divideBy30() {
       const input = document.getElementById("numberInput");
       const value = parseFloat(input.value);
       if (!isNaN(value)) {
-        const result = value / 30;
+        const result = (value / 30).toFixed(4);
         alert("结果：" + result);
       }
     }
